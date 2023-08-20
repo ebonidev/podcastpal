@@ -1,4 +1,4 @@
-%%writefile /content/podcast/podcast_frontend.py
+%%writefile /content/podcast/app.py
 import streamlit as st
 import modal
 import json
