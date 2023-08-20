@@ -1,10 +1,11 @@
+%%writefile /content/podcast/podcast_frontend.py
 import streamlit as st
 import modal
 import json
 import os
 
 def main():
-    st.title("Podcast Pal")
+    st.title("Newsletter Dashboard")
 
     available_podcast_info = create_dict_from_json_files('.')
 
@@ -20,7 +21,7 @@ def main():
         podcast_info = available_podcast_info[selected_podcast]
 
         # Right section - Newsletter content
-        st.header("Content")
+        st.header("Newsletter Content")
 
         # Display the podcast title
         st.subheader("Episode Title")
@@ -42,11 +43,11 @@ def main():
 
         with col3:
             st.subheader("Podcast Guest")
-            st.write(podcast_info['podcast_guest']['name'])
+            st.write(podcast_info['podcast_guest'])
 
         with col4:
             st.subheader("Podcast Guest Details")
-            st.write(podcast_info["podcast_guest"]['summary'])
+            st.write(podcast_info["podcast_guest"])
 
         # Display the five key moments
         st.subheader("Key Moments")
@@ -90,11 +91,11 @@ def main():
 
         with col3:
             st.subheader("Podcast Guest")
-            st.write(podcast_info['podcast_guest']['name'])
+            st.write(podcast_info['podcast_guest'])
 
         with col4:
             st.subheader("Podcast Guest Details")
-            st.write(podcast_info["podcast_guest"]['summary'])
+            st.write(podcast_info["podcast_guest"])
 
         # Display the five key moments
         st.subheader("Key Moments")
